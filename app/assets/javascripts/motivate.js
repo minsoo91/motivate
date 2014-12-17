@@ -4,7 +4,10 @@ window.Motivate = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new window.Motivate.Routers.Router({
+    	$rootEl: $('#content')
+    })
+    Backbone.history.start();
   }
 };
 

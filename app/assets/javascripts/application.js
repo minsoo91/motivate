@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require motivate
+//= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
