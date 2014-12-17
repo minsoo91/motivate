@@ -1,5 +1,5 @@
 window.Motivate.Views.Index = Backbone.CompositeView.extend({
-	className: "main",
+	className: "bbIndexView",
 	template: JST['index'],
 	render: function () {
 		var content = this.template();

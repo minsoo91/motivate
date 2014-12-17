@@ -1,0 +1,2 @@
+module PositiveQuotesHelper
+end
