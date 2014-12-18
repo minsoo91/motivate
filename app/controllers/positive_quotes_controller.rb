@@ -1,6 +1,6 @@
 class PositiveQuotesController < ApplicationController
 	def index
-		@quotes = PositiveQuote.all
+		@quotes = PositiveQuote.randomly_select_one
 		render json: @quotes
 	end
 end
