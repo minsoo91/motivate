@@ -5,7 +5,7 @@ window.Motivate = {
   Routers: {},
   initialize: function() {
     new window.Motivate.Routers.Router({
-    	$rootEl: $('#content')
+    	$rootEl: $('#content-wrapper')
     })
     Backbone.history.start();
   }
