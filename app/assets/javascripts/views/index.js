@@ -1,12 +1,17 @@
 window.Motivate.Views.Index = Backbone.CompositeView.extend({
 	className: "bbIndexView",
 	template: JST['index'],
-	initialize: function () {
-		this.listenTo(this.model, "sync", this.render)
-	},
+	initialize: function (options) {},
 	render: function () {
-		var content = this.template({ quote: this.model });
+		console.log("rendered index")
+		var content = this.template();
 		this.$el.html(content);
+		this.renderRandomQuote();
 		return this;
+	},
+
+	renderRandomQuote: function () {
+		var quoteSubview = new Motivate.Views.Quote({ model: this.quote })
+		this.addSubview('#inspiring-quote', quoteSubview)
 	}
 })

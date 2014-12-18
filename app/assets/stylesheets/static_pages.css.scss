@@ -6,11 +6,28 @@
 	width: 100%;
 	height: 100%;
 	.bbIndexView {
+        font-family: Georgia, serif;
 		#inspiring-quote {
 			width: 50%;
 			margin-left: auto;
 			margin-right: auto;
+            text-align: center;
 		}
+        #goals-section {
+            width: 30%;
+            height: 100%;
+            display: inline-block;
+            float: left;
+            #new-goal {
+                margin-right: 10px;
+            }
+        }
+        #data-visualization {
+            width: 70%;
+            height: 100%;
+            displaY: inline-block;
+            float: left;
+        }
 	}
 }
 

@@ -8,12 +8,7 @@ window.Motivate.Routers.Router = Backbone.Router.extend({
 	},
 
 	index: function () {
-		var quote = new window.Motivate.Models.PositiveQuote();
-		quote.fetch();
-		var indexView = new Motivate.Views.Index({
-			model: quote
-		});
-
+		var indexView = new Motivate.Views.Index();
 		this._swapView(indexView);
 	},
 
