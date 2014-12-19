@@ -10,12 +10,18 @@ window.Motivate.Views.Index = Backbone.CompositeView.extend({
 		var content = this.template();
 		this.$el.html(content);
 		this.renderRandomQuote();
+		this.renderReminderSection();
 		return this;
 	},
 
 	renderRandomQuote: function () {
 		var quoteSubview = new Motivate.Views.Quote({ model: this.quote })
 		this.addSubview('#inspiring-quote', quoteSubview)
+	},
+
+	renderReminderSection: function () {
+		var reminderSubview = new Motivate.Views.Reminder()
+		this.addSubview('#remind-section', reminderSubview)
 	},
 
 	addNewGoal: function (event) {
