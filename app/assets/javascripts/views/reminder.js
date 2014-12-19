@@ -15,8 +15,12 @@ window.Motivate.Views.Reminder = Backbone.View.extend({
 	sendText: function (event) {
 		event.preventDefault();
 		reminderText = new Motivate.Models.ReminderText()
-		reminderText.save({ to: "2402157380",
+		var toInputVal = this.$('#to').val() // TODO: sanitize input
+		var bodyInputVal = this.$('#body').val()
+
+		debugger;
+		reminderText.save({ to: toInputVal,
 							from: "+12406540188",
-							body: "Making ajax call via backbone to rails on localhost!"})
+							body: bodyInputVal})
 	}
-});
+});	
