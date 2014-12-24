@@ -2,15 +2,14 @@ window.Motivate.Views.Index = Backbone.CompositeView.extend({
 	className: "bbIndexView",
 	template: JST['index'],
 	initialize: function (options) {},
-	events: {
-		"click #add-goal": "addNewGoal"
-	},
 	render: function () {
 		console.log("rendered index")
 		var content = this.template();
 		this.$el.html(content);
 		this.renderRandomQuote();
 		this.renderReminderSection();
+		this.renderProgressSection();
+		this.renderGoalsSection();
 		return this;
 	},
 
@@ -24,9 +23,13 @@ window.Motivate.Views.Index = Backbone.CompositeView.extend({
 		this.addSubview('#remind-section', reminderSubview)
 	},
 
-	addNewGoal: function (event) {
-		event.preventDefault();
-		this.$("#goals-section ul").append("<li>"+this.$('#new-goal').val() + "</li>");
-		this.$('#new-goal').val("")
+	renderProgressSection: function () {
+		var progressSubview = new Motivate.Views.Progress()
+		this.addSubview('#data-visualization', progressSubview)
+	},
+
+	renderGoalsSection: function () {
+		var goalsSubview = new Motivate.Views.Goal()
+		this.addSubview('#goals-section', goalsSubview)
 	}
 })

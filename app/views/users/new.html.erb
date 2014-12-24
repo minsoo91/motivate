@@ -1,0 +1,21 @@
+<div id="sign-content">
+  <h1>Sign up!</h1>
+  <form action="/users" method="POST">
+    <input
+       name="authenticity_token"
+       type="hidden"
+       value="<%= form_authenticity_token %>">
+    <input 
+      type="text" 
+      name="user[email]" 
+      id="user_email"
+      placeholder="Email"
+      value="<%= @user.email if @user %>">
+    <input 
+      type="password" 
+      name="user[password]" 
+      placeholder="Password"
+      id="user_password">
+    <input type="submit" value="Create Account!" class="btn btn-primary">
+  </form>
+</div>

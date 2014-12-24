@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 gem 'backbone-on-rails'
 gem 'twilio-ruby'
 gem 'byebug'
+gem 'bcrypt'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

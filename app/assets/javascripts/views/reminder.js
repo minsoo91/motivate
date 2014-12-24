@@ -18,7 +18,6 @@ window.Motivate.Views.Reminder = Backbone.View.extend({
 		var toInputVal = this.$('#to').val() // TODO: sanitize input
 		var bodyInputVal = this.$('#body').val()
 
-		debugger;
 		reminderText.save({ to: toInputVal,
 							from: "+12406540188",
 							body: bodyInputVal})
