@@ -1,4 +1,23 @@
-<ul></ul>
+<ul>
+	<% if (goals) { %>
+		<% goals.each(function (goal) { %>
+			<li>
+				<%= goal.escape('body') %>
+				<input type="checkbox" 
+					   data-id="<%= goal.id %>"
+					   id="completed<%= goal.id %>"
+					   value="Completed" 
+					   <% if (goal.get('completed') === true) { %>
+					    checked
+					   <% } %>
+				>
+				<br />
+				<a href="#" id="edit<%= goal.id %>">Edit</a>
+				<a href="#" id="remove<%= goal.id %>">Remove</a>
+			</li>
+		<% }) %>
+	<% } %>
+</ul>
 <input type="text" 
 	   id="new-goal"
 	   placeholder="Write your goal here">

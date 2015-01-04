@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   scope :api do 
   	resources :positive_quotes
   	resources :reminder_texts, only: [:create]
+  	resources :goals
   end
 end

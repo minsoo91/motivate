@@ -1,5 +1,9 @@
 window.Motivate.Views.Progress = Backbone.View.extend({
 	template: JST['progress/index'],
+	intialize: function (options) {
+		this.listenTo(this.collection, "sync", this.render)
+	},
+
 	render: function () {
 		var content = this.template();
 		this.$el.html(content);
@@ -8,6 +12,8 @@ window.Motivate.Views.Progress = Backbone.View.extend({
 	},
 
 	drawChart: function () {
+		var numGoals = ((this.collection) ? this.collection.length : 0)
+		var numCompleted = this.collection.where({completed: true}).length
 		this.$('#chart-container').highcharts({
 	        chart: {
 	            type: 'bar'
@@ -20,14 +26,14 @@ window.Motivate.Views.Progress = Backbone.View.extend({
 	        },
 	        yAxis: {
 	        	tickInterval: 1,
-	        	max: 5,
+	        	max: numGoals,
 	            title: {
 	                text: 'Goals completed'
 	            }
 	        },
 	        series: [{
 	            name: 'Goals',
-	            data: [5]
+	            data: [numCompleted]
 	        }
 	        ]
 	    });
